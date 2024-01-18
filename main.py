@@ -2,15 +2,15 @@ import socket
 from concurrent.futures import ThreadPoolExecutor
 import threading
 
-target_ip = input("Enter target: ")
+target_ip = input("Enter target IP (in x.y.z.a format): ")
 open_ports = []
 ports_to_scan = range(1, 1025)
-fake_ip = input("Enter fake IP: ")
+fake_ip = input("Enter fake IP (in x.y.z.a format): ")
 Trd = int(input("Insert number of Threads for each DOS: "))
 
 def port_scan(target_port):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.settimeout(0.1) #set in on whatever you want to
+    sock.settimeout(0.1) #set it on whatever you want to
     try:
         sock.connect((target_ip, target_port))
         open_ports.append(target_port)
