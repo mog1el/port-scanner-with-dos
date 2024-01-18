@@ -5,7 +5,7 @@ import threading
 target_ip = input("Enter target: ")
 open_ports = []
 ports_to_scan = range(1, 1025)
-fake_ip = '44.197.175.168'
+fake_ip = input("Enter fake IP: ")
 Trd = int(input("Insert number of Threads for each DOS: "))
 
 def port_scan(target_port):
